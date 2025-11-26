@@ -3,12 +3,7 @@ namespace Weap0n3\CarsNumber;
 
 class CarsNumber{
 	public function getCity($carNumber):string {
-		for($i=0; $i<strlen($carNumber); $i++){
-			if(is_numeric($carNumber[$i]) || $carNumber[$i]==" " || $carNumber[$i]=="-"){
-				$cityCode = substr($carNumber, 0, $i);
-				break;
-			}	
-		}
+		$cityCode = explode("-", $carNumber)[0];
 
 		if ($cityCode=="ZE"){
 			return "Zell am See";
